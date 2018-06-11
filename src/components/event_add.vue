@@ -1,6 +1,6 @@
 <template>
     <div class="event-add">
-        <input type="text" class="n-input" v-model="content" placeholder="待办事项" @keyup.enter="submit">
+        <input type="text" class="n-input" v-model="content" placeholder="写下你的待办事项吧" @keyup.enter="submit">
         <button class="add-btn" @click="submit">提交</button>
     </div>
 </template>

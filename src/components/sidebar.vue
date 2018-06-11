@@ -1,15 +1,16 @@
 <template>
     <div class="event-tools" :class="{'show-event-tools':isShow}">
+        <h4 class="note">好记性不如烂笔头✏️</h4>
         <ul class="tools-sidebar">
             <li>
                 <button class="tools-btn" @click="openTheme">切换主题</button>
             </li>
-            <li>
+            <!-- <li>
                 <button class="tools-btn" @click="downloadData('notepad.txt',getDate)">下载数据</button>
             </li>
             <li>
                 <button class="tools-btn" @click="uploadData()">导入数据</button>
-            </li>
+            </li> -->
             <li>
                 <button class="tools-btn" @click="openTable">编辑数据</button>
             </li>
@@ -90,11 +91,14 @@
         }
         pre{
             white-space: pre-wrap;
-            font:{
+            font{
                 size: 14px;
-                family:  arial,"microsoft yahei";
+                font-family:  arial,"microsoft yahei";
             }
             line-height: 20px;
+        }
+        .note{
+            color: #fff;
         }
     }
 

@@ -1,6 +1,6 @@
 <template>
     <header class="">
-        <h1>记事本 <a class="t-btn" @click="showTools"><span></span></a></h1>
+        <h1>🇹🇭泰国之旅🏖 <a class="t-btn" @click="showTools"><span></span></a></h1>
     </header>
 </template>
 <script>
@@ -17,20 +17,20 @@
     header{
     	position:relative;
         width:100%;
-        height:70px;
+        height:50px;
         z-index:100;
         h1{
             position: relative;
             width:100%;
             max-width:800px;
             margin:0 auto;
-            line-height: 70px;
+            line-height: 50px;
             text-align: center;
             color: #fff;
             a.t-btn{
                 position: absolute;
-                right:10px;
-                top:22px;
+                left:10px;
+                top:12px;
                 width:30px;
                 height:26px;
                 cursor: pointer;
