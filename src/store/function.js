@@ -41,7 +41,7 @@ const serverEvent = function (item) {
         });
     }
     this.clear = function () {
-        axios.delete('/api/notepad');
+        axios.delete('/api/delnotepad');
     }
 }
 
