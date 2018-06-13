@@ -5,11 +5,18 @@ import * as type from './mutations_types.js';
 import * as func from '../function';
 
 export default {
+    [type.GETJSON](states, obj){
+        if(obj){
+            let data = JSON.parse(obj);
+            states.event = data.event;
+            states.count = data.count;
+        }
+    },
     [type.ADDEVENT](states, obj){
         states.count++;
         obj.items.id = states.count;
         states.event.unshift(obj.items);
-        func.local.set(states);
+        func.server.set(states);
     },
     [type.EVENTDONE](states, obj){
         for (let i = 0; i < states.event.length; i++) {
@@ -22,7 +29,7 @@ export default {
             }
         }
         states.event.unshift(item);
-        func.local.set(states);
+        func.server.set(states);
     },
     [type.EVENTTODO](states, obj){
         for (let i = 0; i < states.event.length; i++) {
@@ -34,7 +41,7 @@ export default {
             }
         }
         states.event.unshift(item);
-        func.local.set(states);
+        func.server.set(states);
     },
     [type.EVENTCANCEL](states, obj){
         for (let i = 0; i < states.event.length; i++) {
@@ -46,11 +53,11 @@ export default {
             }
         }
         states.event.unshift(item);
-        func.local.set(states);
+        func.server.set(states);
     },
     [type.CLEAREVENT](states){
         states.event = [];
-        func.local.clear();
+        func.server.clear();
     },
     [type.DELEVENT](states, info){
         if (states.event[info.index].id === info.id) {
@@ -62,7 +69,7 @@ export default {
                 }
             })
         }
-        func.local.set(states);
+        func.server.set(states);
     },
     [type.EDITEVENT](states, info){
         if (states.event[info.index].id === info.id) {
@@ -74,12 +81,12 @@ export default {
                 }
             })
         }
-        func.local.set(states);
+        func.server.set(states);
     },
     [type.UPLOADEVENT](states, data){
         data = JSON.parse(data);
         states.event = data.event.event;
         states.count = data.event.count;
-        func.local.set(states);
+        func.server.set(states);
     }
 }

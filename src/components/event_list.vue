@@ -108,6 +108,14 @@
                     ulElement.style.height = 'auto';
                 }, 300)
             }
+        },
+        mounted() {
+            let that = this;
+            this.$store.dispatch('getList');
+            setTimeout(()=>{
+                  console.log(that.$store.state)  
+            },500)
+            
         }
     }
 </script>

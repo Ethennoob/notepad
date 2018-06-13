@@ -1,6 +1,7 @@
 <template>
     <footer class="footer">
-        © 2018 <a href="https://github.com/Ethennoob" target="_blank">蠢货</a> 强力支持小妹妹
+        <!-- © 2018 <a href="https://github.com/Ethennoob" target="_blank">蠢货</a> 强力支持小妹妹 -->
+        © 2018 凌佩奇🐷 强力支持小妹妹
     </footer>
 </template>
 

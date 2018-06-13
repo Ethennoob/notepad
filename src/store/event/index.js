@@ -5,7 +5,13 @@ import * as func from '../function';
 import actions from './actions.js';
 import mutations from './mutations.js';
 import getters from './getters.js';
-const state = func.local.get() || {
+
+// const state = func.server.get() || {
+//     event: [],
+//     count: 0
+// }
+
+const state =  {
     event: [],
     count: 0
 }

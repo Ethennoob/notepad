@@ -11,6 +11,6 @@ import theme from './theme';
 export default new Vuex.Store({
     modules: {
         event,
-        theme
+        theme, 
     }
 });

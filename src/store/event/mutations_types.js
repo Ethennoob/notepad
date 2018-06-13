@@ -24,3 +24,6 @@ export const EDITEVENT = 'EDITEVENT';
 
 // 导入数据
 export const UPLOADEVENT = 'UPLOADEVENT';
+
+// 导入数据
+export const GETJSON = 'GETJSON';

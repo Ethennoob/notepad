@@ -7,8 +7,8 @@
             </li>
             <!-- <li>
                 <button class="tools-btn" @click="downloadData('notepad.txt',getDate)">下载数据</button>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <button class="tools-btn" @click="uploadData()">导入数据</button>
             </li> -->
             <li>
