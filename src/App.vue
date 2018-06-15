@@ -9,6 +9,7 @@
                        @uploadData="uploadData"
                        @opentable="table = true;tools = false"
                        @opentheme="theme = true;tools = false"
+                       @openimage="image = true;tools = false;cover_image = false"
             ></n-sidebar>
         </section >
         <transition name="dialog">
@@ -18,7 +19,8 @@
         
         <n-table @deldialog="delData" :is-show="table" @close="table = false"></n-table>
         <n-theme :is-show="theme" @close="theme = false"></n-theme>
-        <n-footer></n-footer>
+        <n-image :is-show="image" @close="image = false"></n-image>
+        <n-footer :is-show="cover_image"></n-footer>
     </div>
 </template>
 
@@ -31,7 +33,8 @@
     import nSidebar from './components/sidebar.vue';
     import nDialog from './components/dialog.vue';
     import nTheme from './components/theme.vue';
-
+    import nImage from './components/event_image.vue';
+    
     export default {
         data(){
             return {
@@ -39,8 +42,10 @@
                 dialog: false,
                 table: false,
                 theme: false,
+                image: false,
                 dialog_type: '',
                 tips: '',
+                cover_image:true,
                 del_info: {
                     index: 0,
                     id: 0
@@ -48,7 +53,7 @@
             }
         },
         components: {
-            nHeader, nAdd, nSidebar, nDialog, nTable, nList, nTheme, nFooter
+            nHeader, nAdd, nSidebar, nDialog, nTable, nList, nTheme, nFooter,nImage
         },
         computed:{
             getTheme(){             // 获取主题色
@@ -96,6 +101,8 @@
                     this.table = !this.table;
                 }else if(this.theme){
                     this.theme = !this.theme;
+                }else if(this.image){
+                    this.image = !this.image;
                 }else{
                     this.tools = !this.tools
                 }

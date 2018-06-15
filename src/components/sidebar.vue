@@ -3,6 +3,9 @@
         <h4 class="note">好记性不如烂笔头✏️</h4>
         <ul class="tools-sidebar">
             <li>
+                <button class="tools-btn" @click="openImage">相册</button>
+            </li>
+            <li>
                 <button class="tools-btn" @click="openTheme">切换主题</button>
             </li>
             <!-- <li>
@@ -43,6 +46,9 @@
             },
             openTheme(){
                 this.$emit('opentheme');
+            },
+            openImage(){
+                this.$emit('openimage');
             },
             downloadData(fileName, content){
                 let aTag = document.createElement('a');
